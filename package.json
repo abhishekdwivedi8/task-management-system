@@ -1,0 +1,27 @@
+{
+  "name": "task-management-system",
+  "version": "1.0.0",
+  "description": "Enterprise-grade Task Management System with MERN Stack",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "init-db": "cd backend && npm run init-db",
+    "start": "npm run dev"
+  },
+  "keywords": [
+    "task-management",
+    "mern",
+    "react",
+    "nodejs",
+    "mongodb",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

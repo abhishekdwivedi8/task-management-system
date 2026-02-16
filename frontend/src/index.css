@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cream-50 text-gray-800 antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-gold-500 to-gold-600 text-cream-50 px-6 py-3 rounded-lg font-semibold hover:from-gold-600 hover:to-gold-700 transition-all duration-300 shadow-gold;
+  }
+
+  .btn-secondary {
+    @apply bg-cream-100 text-gold-700 px-6 py-3 rounded-lg font-semibold hover:bg-cream-200 transition-all duration-300 border border-gold-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-cream-50 border-2 border-gold-200 rounded-lg focus:outline-none focus:border-gold-500 focus:ring-2 focus:ring-gold-300 transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-cream-50 rounded-xl shadow-lg border border-gold-200 p-6;
+  }
+
+  .badge {
+    @apply px-3 py-1 rounded-full text-sm font-semibold;
+  }
+
+  .badge-pending {
+    @apply bg-gold-100 text-gold-700 border border-gold-300;
+  }
+
+  .badge-in-progress {
+    @apply bg-gradient-to-r from-indianBlue-500 to-indianBlue-600 text-white;
+  }
+
+  .badge-completed {
+    @apply bg-gradient-to-r from-indianGreen-500 to-indianGreen-600 text-white;
+  }
+
+  .badge-cancelled {
+    @apply bg-gray-200 text-gray-700;
+  }
+
+  .priority-low {
+    @apply text-gray-600;
+  }
+
+  .priority-medium {
+    @apply text-gold-600;
+  }
+
+  .priority-high {
+    @apply text-saffron-600;
+  }
+
+  .priority-urgent {
+    @apply text-red-600;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fffbf0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ca8a04;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Loading spinner */
+.spinner {
+  border: 3px solid #fff5d6;
+  border-top: 3px solid #d4af37;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
