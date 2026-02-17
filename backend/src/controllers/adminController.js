@@ -14,12 +14,12 @@ export const getAllUsers = async (req, res) => {
     const filter = { accountStatus: { $ne: 'deleted' } };
 
     // Filter by role
-    if (req.query.role) {
+    if (req.query.role && req.query.role !== '') {
       filter.role = req.query.role;
     }
 
     // Filter by verification status
-    if (req.query.verified !== undefined) {
+    if (req.query.verified !== undefined && req.query.verified !== '') {
       filter.isEmailVerified = req.query.verified === 'true';
     }
 

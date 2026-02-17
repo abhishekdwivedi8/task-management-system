@@ -27,7 +27,7 @@ const AdminUsers = () => {
       setUsers(response.data.data.users);
       setPagination(response.data.data.pagination);
     } catch (error) {
-      toast.error('Failed to load users');
+      toast.error(error.response?.data?.message || 'Failed to load users');
     } finally {
       setLoading(false);
     }

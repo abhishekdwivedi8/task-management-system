@@ -15,18 +15,30 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [token, setToken] = useState(localStorage.getItem('token'));
+  const [token, setToken] = useState(sessionStorage.getItem('token'));
 
-  // Load user from localStorage on mount
+  // Fetch user profile from backend on mount
   useEffect(() => {
-    const storedUser = localStorage.getItem('user');
-    const storedToken = localStorage.getItem('token');
+    const fetchUserProfile = async () => {
+      const storedToken = sessionStorage.getItem('token');
+      
+      if (storedToken) {
+        try {
+          const response = await authAPI.getProfile();
+          setUser(response.data.data.user);
+          setToken(storedToken);
+        } catch (error) {
+          console.error('Failed to fetch user profile:', error);
+          // Token invalid or expired, clear session
+          sessionStorage.removeItem('token');
+          setToken(null);
+          setUser(null);
+        }
+      }
+      setLoading(false);
+    };
 
-    if (storedUser && storedToken) {
-      setUser(JSON.parse(storedUser));
-      setToken(storedToken);
-    }
-    setLoading(false);
+    fetchUserProfile();
   }, []);
 
   // Register user
@@ -50,8 +62,7 @@ export const AuthProvider = ({ children }) => {
 
       setUser(userData);
       setToken(authToken);
-      localStorage.setItem('user', JSON.stringify(userData));
-      localStorage.setItem('token', authToken);
+      sessionStorage.setItem('token', authToken);
 
       toast.success(response.data.message);
       return response.data;
@@ -83,8 +94,7 @@ export const AuthProvider = ({ children }) => {
 
       setUser(userData);
       setToken(authToken);
-      localStorage.setItem('user', JSON.stringify(userData));
-      localStorage.setItem('token', authToken);
+      sessionStorage.setItem('token', authToken);
 
       toast.success(response.data.message);
       return response.data;
@@ -101,16 +111,14 @@ export const AuthProvider = ({ children }) => {
       await authAPI.logout();
       setUser(null);
       setToken(null);
-      localStorage.removeItem('user');
-      localStorage.removeItem('token');
+      sessionStorage.removeItem('token');
       toast.success('Logged out successfully');
     } catch (error) {
       console.error('Logout error:', error);
-      // Clear local state even if API call fails
+      // Clear session state even if API call fails
       setUser(null);
       setToken(null);
-      localStorage.removeItem('user');
-      localStorage.removeItem('token');
+      sessionStorage.removeItem('token');
     }
   };
 
