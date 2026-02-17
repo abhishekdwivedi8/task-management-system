@@ -77,7 +77,7 @@ const TaskDetail = () => {
     <div className="max-w-4xl mx-auto animate-fadeIn">
       <button
         onClick={() => navigate('/tasks')}
-        className="flex items-center text-gold-600 hover:text-gold-700 mb-6"
+        className="flex items-center text-sky-600 hover:text-sky-700 mb-6"
       >
         <ArrowLeft size={20} className="mr-2" />
         Back to Tasks
@@ -93,7 +93,7 @@ const TaskDetail = () => {
                   <span className={`badge ${getStatusBadge(task.status)}`}>
                     {task.status}
                   </span>
-                  <span className="badge bg-gold-100 text-gold-700 border border-gold-300">
+                  <span className="badge bg-sky-100 text-sky-700 border border-sky-300">
                     {task.priority}
                   </span>
                 </div>
@@ -117,7 +117,7 @@ const TaskDetail = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-4 bg-cream-100 rounded-lg">
+                <div className="p-4 bg-sky-50 rounded-lg">
                   <div className="flex items-center text-gray-600 mb-2">
                     <User size={18} className="mr-2" />
                     <span className="font-semibold">Created By</span>
@@ -126,7 +126,7 @@ const TaskDetail = () => {
                   <p className="text-sm text-gray-600">{task.createdBy?.email}</p>
                 </div>
 
-                <div className="p-4 bg-cream-100 rounded-lg">
+                <div className="p-4 bg-sky-50 rounded-lg">
                   <div className="flex items-center text-gray-600 mb-2">
                     <Calendar size={18} className="mr-2" />
                     <span className="font-semibold">Created At</span>

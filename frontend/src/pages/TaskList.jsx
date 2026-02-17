@@ -94,10 +94,10 @@ const TaskList = () => {
       <div className="card">
         {/* Active Filter Indicator */}
         {(filters.status || filters.priority || filters.search) && (
-          <div className="mb-4 p-3 bg-gold-light-gradient border-2 border-gold-300 rounded-lg flex items-center justify-between">
+          <div className="mb-4 p-3 bg-sky-50 border-2 border-sky-300 rounded-lg flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Filter size={18} className="text-gold-700" />
-              <span className="text-gold-700 font-semibold">Active Filters:</span>
+              <Filter size={18} className="text-sky-700" />
+              <span className="text-sky-700 font-semibold">Active Filters:</span>
               {filters.status && (
                 <span className="badge badge-pending">
                   Status: {filters.status}
@@ -125,7 +125,7 @@ const TaskList = () => {
                 });
                 setSearchParams({});
               }}
-              className="text-gold-700 hover:text-gold-800 font-semibold text-sm"
+              className="text-sky-700 hover:text-sky-800 font-semibold text-sm"
             >
               Clear All
             </button>
@@ -136,7 +136,7 @@ const TaskList = () => {
           {/* Search */}
           <div className="md:col-span-2">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gold-500" size={20} />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sky-500" size={20} />
               <input
                 type="text"
                 placeholder="Search tasks..."
@@ -191,7 +191,7 @@ const TaskList = () => {
               <Link
                 key={task._id}
                 to={`/tasks/${task._id}`}
-                className="block p-4 bg-cream-100 border-2 border-gold-200 rounded-lg hover:shadow-gold transition-all duration-300"
+                className="block p-4 bg-white border-2 border-sky-200 rounded-lg hover:shadow-lg hover:border-sky-400 transition-all duration-300"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">

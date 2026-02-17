@@ -71,10 +71,10 @@ const AdminUsers = () => {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-gray-800">User Management</h1>
-          <p className="text-gold-600 mt-1">Manage all registered users</p>
+          <p className="text-sky-600 mt-1">Manage all registered users</p>
         </div>
-        <div className="bg-gradient-to-r from-gold-500 to-gold-600 p-4 rounded-xl">
-          <Users size={32} className="text-cream-50" />
+        <div className="bg-gradient-to-r from-sky-500 to-blue-600 p-4 rounded-xl">
+          <Users size={32} className="text-white" />
         </div>
       </div>
 
@@ -84,7 +84,7 @@ const AdminUsers = () => {
           {/* Search */}
           <div className="md:col-span-2">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gold-500" size={20} />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sky-500" size={20} />
               <input
                 type="text"
                 placeholder="Search by name or email..."
@@ -132,7 +132,7 @@ const AdminUsers = () => {
         ) : (
           <table className="w-full">
             <thead>
-              <tr className="border-b-2 border-gold-200">
+              <tr className="border-b-2 border-sky-200">
                 <th className="text-left py-3 px-4 text-gray-700 font-semibold">User</th>
                 <th className="text-left py-3 px-4 text-gray-700 font-semibold">Role</th>
                 <th className="text-left py-3 px-4 text-gray-700 font-semibold">Status</th>
@@ -143,7 +143,7 @@ const AdminUsers = () => {
             </thead>
             <tbody>
               {users.map((user) => (
-                <tr key={user._id} className="border-b border-gold-100 hover:bg-cream-100">
+                <tr key={user._id} className="border-b border-sky-100 hover:bg-sky-50">
                   <td className="py-4 px-4">
                     <div>
                       <p className="font-semibold text-gray-800">{user.name}</p>
@@ -154,7 +154,7 @@ const AdminUsers = () => {
                     <select
                       value={user.role}
                       onChange={(e) => handleRoleChange(user._id, e.target.value)}
-                      className="text-sm px-3 py-1 border-2 border-gold-200 rounded-lg focus:outline-none focus:border-gold-500"
+                      className="text-sm px-3 py-1 border-2 border-sky-200 rounded-lg focus:outline-none focus:border-sky-500"
                     >
                       <option value="user">User</option>
                       <option value="admin">Admin</option>
@@ -164,7 +164,7 @@ const AdminUsers = () => {
                     <select
                       value={user.accountStatus}
                       onChange={(e) => handleStatusChange(user._id, e.target.value)}
-                      className="text-sm px-3 py-1 border-2 border-gold-200 rounded-lg focus:outline-none focus:border-gold-500"
+                      className="text-sm px-3 py-1 border-2 border-sky-200 rounded-lg focus:outline-none focus:border-sky-500"
                     >
                       <option value="active">Active</option>
                       <option value="suspended">Suspended</option>
@@ -172,7 +172,7 @@ const AdminUsers = () => {
                   </td>
                   <td className="py-4 px-4">
                     {user.isEmailVerified ? (
-                      <CheckCircle size={20} className="text-indianGreen-600" />
+                      <CheckCircle size={20} className="text-green-600" />
                     ) : (
                       <XCircle size={20} className="text-red-500" />
                     )}

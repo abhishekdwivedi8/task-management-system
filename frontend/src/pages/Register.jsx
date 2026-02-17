@@ -71,21 +71,21 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen bg-cream-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-white flex items-center justify-center p-4">
       {/* Decorative Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-10 w-72 h-72 bg-gold-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-20 left-10 w-72 h-72 bg-indianGreen-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
+        <div className="absolute top-20 right-10 w-72 h-72 bg-sky-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
       </div>
 
       <div className="relative w-full max-w-md">
         {/* Logo/Header */}
         <div className="text-center mb-8">
-          <div className="inline-block bg-gradient-to-r from-gold-500 to-gold-600 p-4 rounded-2xl shadow-gold-lg mb-4">
-            <UserPlus size={48} className="text-cream-50" />
+          <div className="inline-block bg-gradient-to-r from-sky-500 to-blue-600 p-4 rounded-2xl shadow-lg mb-4">
+            <UserPlus size={48} className="text-white" />
           </div>
           <h1 className="text-4xl font-bold text-gray-800 mb-2">Create Account</h1>
-          <p className="text-gold-600">Join us to manage your tasks efficiently</p>
+          <p className="text-sky-600">Join us to manage your tasks efficiently</p>
         </div>
 
         {/* Register Form */}
@@ -111,7 +111,7 @@ const Register = () => {
                 Full Name
               </label>
               <div className="relative">
-                <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gold-500" size={20} />
+                <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sky-500" size={20} />
                 <input
                   type="text"
                   name="name"
@@ -132,7 +132,7 @@ const Register = () => {
                 Email Address
               </label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gold-500" size={20} />
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sky-500" size={20} />
                 <input
                   type="email"
                   name="email"
@@ -151,7 +151,7 @@ const Register = () => {
                 Password
               </label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gold-500" size={20} />
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sky-500" size={20} />
                 <input
                   type="password"
                   name="password"
@@ -171,7 +171,7 @@ const Register = () => {
                 Confirm Password
               </label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gold-500" size={20} />
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sky-500" size={20} />
                 <input
                   type="password"
                   name="confirmPassword"
@@ -185,23 +185,23 @@ const Register = () => {
             </div>
 
             {/* Password Requirements */}
-            <div className="p-3 bg-gold-light-gradient border border-gold-300 rounded-lg">
-              <p className="text-gold-700 font-semibold text-xs mb-2">Password must contain:</p>
+            <div className="p-3 bg-sky-50 border border-sky-300 rounded-lg">
+              <p className="text-sky-700 font-semibold text-xs mb-2">Password must contain:</p>
               <ul className="space-y-1 text-xs text-gray-700">
                 <li className="flex items-center">
-                  <CheckCircle size={14} className="text-indianGreen-500 mr-2" />
+                  <CheckCircle size={14} className="text-green-500 mr-2" />
                   At least 6 characters
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle size={14} className="text-indianGreen-500 mr-2" />
+                  <CheckCircle size={14} className="text-green-500 mr-2" />
                   One uppercase letter
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle size={14} className="text-indianGreen-500 mr-2" />
+                  <CheckCircle size={14} className="text-green-500 mr-2" />
                   One lowercase letter
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle size={14} className="text-indianGreen-500 mr-2" />
+                  <CheckCircle size={14} className="text-green-500 mr-2" />
                   One number
                 </li>
               </ul>
@@ -228,7 +228,7 @@ const Register = () => {
           <div className="mt-6 text-center">
             <p className="text-gray-600">
               Already have an account?{' '}
-              <Link to="/login" className="text-gold-600 font-semibold hover:text-gold-700">
+              <Link to="/login" className="text-sky-600 font-semibold hover:text-sky-700">
                 Sign in here
               </Link>
             </p>

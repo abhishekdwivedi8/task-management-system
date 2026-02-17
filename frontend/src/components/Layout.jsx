@@ -33,41 +33,41 @@ const Layout = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen">
       {/* Header */}
-      <header className="bg-gradient-to-r from-gold-500 to-gold-600 shadow-gold-lg sticky top-0 z-50">
+      <header className="glass-effect sticky top-0 z-50 border-b border-white/20 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div className="flex items-center">
+            <div className="flex items-center space-x-4">
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
-                className="lg:hidden text-cream-50 mr-4"
+                className="lg:hidden text-gray-700 hover:text-sky-600 transition-colors"
               >
                 {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
-              <h1 className="text-2xl font-bold text-cream-50">
-                Task Management
+              <h1 className="text-xl font-bold bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent">
+                Task Manager
               </h1>
             </div>
 
             {/* User Menu */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3">
               <Link
                 to="/profile"
-                className="flex items-center space-x-2 bg-gold-light-gradient px-4 py-2 rounded-lg hover:shadow-gold transition-all duration-300"
+                className="flex items-center space-x-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm hover:bg-white transition-all duration-200 border border-gray-200"
               >
-                <User size={20} className="text-gold-700" />
-                <span className="text-gold-700 font-semibold hidden sm:inline">
+                <User size={18} className="text-sky-600" />
+                <span className="text-gray-700 font-medium hidden sm:inline">
                   {user?.name}
                 </span>
               </Link>
               <button
                 onClick={handleLogout}
-                className="flex items-center space-x-2 bg-cream-50 px-4 py-2 rounded-lg hover:bg-cream-100 transition-all duration-300"
+                className="flex items-center space-x-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm hover:bg-red-50 transition-all duration-200 border border-gray-200 hover:border-red-200"
               >
-                <LogOut size={20} className="text-gold-700" />
-                <span className="text-gold-700 font-semibold hidden sm:inline">
+                <LogOut size={18} className="text-gray-600" />
+                <span className="text-gray-700 font-medium hidden sm:inline">
                   Logout
                 </span>
               </button>
@@ -81,7 +81,7 @@ const Layout = () => {
         <aside
           className={`${
             sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-          } lg:translate-x-0 fixed lg:static inset-y-0 left-0 z-40 w-64 bg-gradient-to-b from-cream-50 to-cream-100 border-r-2 border-gold-200 transition-transform duration-300 ease-in-out mt-16 lg:mt-0`}
+          } lg:translate-x-0 fixed lg:static inset-y-0 left-0 z-40 w-64 glass-effect border-r border-white/20 transition-transform duration-300 ease-in-out mt-16 lg:mt-0`}
         >
           <nav className="p-4 space-y-2">
             {navItems.map((item) => {
@@ -93,24 +93,24 @@ const Layout = () => {
                   key={item.path}
                   to={item.path}
                   onClick={() => setSidebarOpen(false)}
-                  className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 ${
+                  className={`flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 ${
                     active
-                      ? 'bg-gradient-to-r from-gold-500 to-gold-600 text-cream-50 shadow-gold'
-                      : 'text-gray-700 hover:bg-cream-200 hover:text-gold-700'
+                      ? 'bg-sky-500 text-white shadow-lg shadow-sky-500/30'
+                      : 'text-gray-700 hover:bg-white/60 hover:text-sky-600'
                   }`}
                 >
                   <Icon size={20} />
-                  <span className="font-semibold">{item.label}</span>
+                  <span className="font-medium">{item.label}</span>
                 </Link>
               );
             })}
           </nav>
 
-          {/* User Badge */}
+          {/* Admin Badge */}
           {isAdmin() && (
             <div className="absolute bottom-4 left-4 right-4">
-              <div className="bg-gold-light-gradient border-2 border-gold-300 rounded-lg p-3 text-center">
-                <p className="text-gold-700 font-bold text-sm">Admin Access</p>
+              <div className="bg-sky-50 border-2 border-sky-200 rounded-xl p-3 text-center">
+                <p className="text-sky-700 font-bold text-sm">Admin Access</p>
               </div>
             </div>
           )}
@@ -119,13 +119,13 @@ const Layout = () => {
         {/* Overlay for mobile */}
         {sidebarOpen && (
           <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"
+            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-30 lg:hidden"
             onClick={() => setSidebarOpen(false)}
           ></div>
         )}
 
         {/* Main Content */}
-        <main className="flex-1 p-6 lg:p-8">
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 min-h-screen">
           <div className="max-w-7xl mx-auto">
             <Outlet />
           </div>

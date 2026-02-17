@@ -34,40 +34,34 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-cream-50 flex items-center justify-center p-4">
-      {/* Decorative Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gold-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-saffron-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
-      </div>
-
-      <div className="relative w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center p-4">
+      <div className="w-full max-w-md">
         {/* Logo/Header */}
         <div className="text-center mb-8">
-          <div className="inline-block bg-gradient-to-r from-gold-500 to-gold-600 p-4 rounded-2xl shadow-gold-lg mb-4">
-            <LogIn size={48} className="text-cream-50" />
+          <div className="inline-block bg-primary-500 p-4 rounded-2xl shadow-lg shadow-primary-500/30 mb-4">
+            <LogIn size={40} className="text-white" />
           </div>
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">Welcome Back</h1>
-          <p className="text-gold-600">Sign in to manage your tasks</p>
+          <h1 className="text-3xl font-bold text-gray-800 mb-2">Welcome Back</h1>
+          <p className="text-gray-600">Sign in to your account</p>
         </div>
 
         {/* Login Form */}
-        <div className="card animate-fadeIn">
+        <div className="glass-card border-2 border-white/40 shadow-2xl animate-fadeIn">
           {error && (
-            <div className="mb-6 p-4 bg-red-50 border-2 border-red-300 rounded-lg flex items-start space-x-3">
+            <div className="mb-6 p-4 bg-red-50 border-2 border-red-200 rounded-xl flex items-start space-x-3">
               <AlertCircle className="text-red-600 flex-shrink-0 mt-0.5" size={20} />
               <p className="text-red-700 text-sm">{error}</p>
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-5">
             {/* Email */}
             <div>
-              <label className="block text-gray-700 font-semibold mb-2">
+              <label className="block text-gray-700 font-medium mb-2">
                 Email Address
               </label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gold-500" size={20} />
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-primary-500" size={20} />
                 <input
                   type="email"
                   name="email"
@@ -82,11 +76,11 @@ const Login = () => {
 
             {/* Password */}
             <div>
-              <label className="block text-gray-700 font-semibold mb-2">
+              <label className="block text-gray-700 font-medium mb-2">
                 Password
               </label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gold-500" size={20} />
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-primary-500" size={20} />
                 <input
                   type="password"
                   name="password"
@@ -120,15 +114,15 @@ const Login = () => {
           <div className="mt-6 text-center">
             <p className="text-gray-600">
               Don't have an account?{' '}
-              <Link to="/register" className="text-gold-600 font-semibold hover:text-gold-700">
+              <Link to="/register" className="text-primary-600 font-semibold hover:text-primary-700">
                 Register here
               </Link>
             </p>
           </div>
 
           {/* Demo Credentials */}
-          <div className="mt-6 p-4 bg-gold-light-gradient border-2 border-gold-300 rounded-lg">
-            <p className="text-gold-700 font-semibold text-sm mb-2">Demo Credentials:</p>
+          <div className="mt-6 p-4 bg-primary-50 border-2 border-primary-200 rounded-xl">
+            <p className="text-primary-700 font-semibold text-sm mb-2">Demo Credentials:</p>
             <p className="text-gray-700 text-xs">Admin: admin@taskmanagement.com / Admin@123</p>
             <p className="text-gray-700 text-xs">User: john@example.com / User@123</p>
           </div>

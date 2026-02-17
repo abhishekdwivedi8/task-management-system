@@ -88,21 +88,21 @@ const VerifyOTP = () => {
   };
 
   return (
-    <div className="min-h-screen bg-cream-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-white flex items-center justify-center p-4">
       {/* Decorative Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-indianBlue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-gold-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-sky-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
       </div>
 
       <div className="relative w-full max-w-md">
         {/* Logo/Header */}
         <div className="text-center mb-8">
-          <div className="inline-block bg-gradient-to-r from-gold-500 to-gold-600 p-4 rounded-2xl shadow-gold-lg mb-4">
-            <Shield size={48} className="text-cream-50" />
+          <div className="inline-block bg-gradient-to-r from-sky-500 to-blue-600 p-4 rounded-2xl shadow-lg mb-4">
+            <Shield size={48} className="text-white" />
           </div>
           <h1 className="text-4xl font-bold text-gray-800 mb-2">Verify Your Email</h1>
-          <p className="text-gold-600">We've sent a 6-digit code to</p>
+          <p className="text-sky-600">We've sent a 6-digit code to</p>
           <p className="text-gray-800 font-semibold">{email}</p>
         </div>
 
@@ -122,7 +122,7 @@ const VerifyOTP = () => {
                 Enter OTP Code
               </label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gold-500" size={20} />
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sky-500" size={20} />
                 <input
                   type="text"
                   value={otp}
@@ -166,28 +166,28 @@ const VerifyOTP = () => {
               <button
                 onClick={handleResend}
                 disabled={resendLoading}
-                className="text-gold-600 font-semibold hover:text-gold-700 disabled:opacity-50"
+                className="text-sky-600 font-semibold hover:text-sky-700 disabled:opacity-50"
               >
                 {resendLoading ? 'Sending...' : 'Resend OTP'}
               </button>
             ) : (
               <p className="text-gray-600">
                 Resend OTP in{' '}
-                <span className="text-gold-600 font-semibold">{resendTimer}s</span>
+                <span className="text-sky-600 font-semibold">{resendTimer}s</span>
               </p>
             )}
           </div>
 
           {/* Back to Login */}
           <div className="mt-4 text-center">
-            <Link to="/login" className="text-gray-600 hover:text-gold-600 text-sm">
+            <Link to="/login" className="text-gray-600 hover:text-sky-600 text-sm">
               Back to Login
             </Link>
           </div>
 
           {/* Info Box */}
-          <div className="mt-6 p-4 bg-gold-light-gradient border-2 border-gold-300 rounded-lg">
-            <p className="text-gold-700 font-semibold text-sm mb-2">📧 Check your email</p>
+          <div className="mt-6 p-4 bg-sky-50 border-2 border-sky-300 rounded-lg">
+            <p className="text-sky-700 font-semibold text-sm mb-2">📧 Check your email</p>
             <ul className="text-gray-700 text-xs space-y-1">
               <li>• Check your spam/junk folder if you don't see the email</li>
               <li>• OTP is valid for 5 minutes only</li>

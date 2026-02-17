@@ -42,7 +42,7 @@ const CreateTask = () => {
     <div className="max-w-3xl mx-auto animate-fadeIn">
       <div className="mb-6">
         <h1 className="text-3xl font-bold text-gray-800 mb-2">Create New Task</h1>
-        <p className="text-gold-600">Fill in the details to create a new task</p>
+        <p className="text-sky-600">Fill in the details to create a new task</p>
       </div>
 
       <div className="card">
